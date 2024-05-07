@@ -1,0 +1,69 @@
+Build Configuration:
+WRLINUX_VERSION      = "10.24.17.0"
+WRLINUX_BRANCH       = "LTS"
+BB_VERSION           = "2.9.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "ubuntu-22.04"
+DISTRO               = "wrlinux"
+DISTRO_VERSION       = "10.24.17.0"
+MACHINE              = "qemux86-64"
+DEFAULTTUNE          = "core2-64"
+TARGET_SYS           = "x86_64-wrs-linux"
+TUNE_FEATURES        = "m64 core2"
+TARGET_FPU           = ""
+XILINX_XSCT_VERSION  = "2023.2"
+XILINX_RELEASE_VERSION = "v2023.2"
+lib32:  TARGET_SYS        = "x86_64-wrsmllib32-linux"
+lib32:  TUNE_FEATURES     = "m32 core2"
+wrlinux              
+wrlinux-distro       = "HEAD:f2bd154da2533ed1a3a4ff3f4087bf0f9d09c591"
+meta                 = "HEAD:4a84a49944b155a6822518c9bd6b84ed6ed49ecf"
+meta-initramfs       
+meta-xfce            
+meta-oe              
+meta-filesystems     
+meta-webserver       
+meta-networking      
+meta-python          
+meta-perl            
+meta-gnome           
+meta-multimedia      = "HEAD:c0544eef7c10c89e0634a7e9f30c533f12bbb934"
+meta-security        = "HEAD:fb28801eeeef53cb6cc0096d1938a93bea323597"
+meta-selinux         = "HEAD:07f3233374f013412d691732adfa2c20167a0ea0"
+intel-x86            = "HEAD:f2a33432cd7b9663fecd7f1b97120cab3fce58f5"
+meta-virtualization  = "HEAD:099f6098b1a75adef51590e4579715dc80bf377f"
+meta-mingw           = "HEAD:acbba477893ef87388effc4679b7f40ee49fc852"
+wr-template          = "HEAD:479c25cb10d31318e2fd0b09a49e10e383c03089"
+meta-yocto-bsp       
+meta-poky            = "HEAD:61353bbdb4ec804b3db93ebc13aede712d816633"
+meta-efi-secure-boot 
+meta-encrypted-storage 
+meta-integrity       
+meta-signing-key     = "HEAD:22e71ffb984b9cf2867230743086ffed89e689df"
+meta-cloud-services  = "HEAD:be585a381138bb1f32e6d1057ed3141b50ebaf85"
+meta                 
+meta-ids             
+meta-tpm2            = "HEAD:22e71ffb984b9cf2867230743086ffed89e689df"
+meta-intel           = "HEAD:3c0b2105e048025756dc4747aae7d8506d36ccb4"
+meta-dpdk            = "HEAD:9bd8203482021171583b37cfbae59e3875730903"
+meta-intel-qat       = "HEAD:8e541102b44ddbb3348b3fe8ce4384a9508aeb62"
+meta-anaconda        = "HEAD:c63b9a5f167a2482e8d03feb3cbcd9ff9c63df95"
+meta-iot-cloud       = "HEAD:17986350339efb1741e1fea8c28615f76169e847"
+meta-tensorflow      = "HEAD:7bac2c9a09785d84b473249a782c8c085619eb2e"
+meta-clang           = "HEAD:989ff6a4e7db59f01d511727135610006124ead2"
+meta-xilinx-tools    = "HEAD:ec32425a88ec491c2f28fa58cf4cb906bdfc66d9"
+meta-raspberrypi     = "HEAD:fe9f7d8336c8c32ab762d020b165cf4ebf634003"
+meta-chromium        = "HEAD:d3a5f63c385e1e621fa1fef975024f8622a535ea"
+meta-lat             = "HEAD:c9c5f73303236e705efb695a080b94e9b8f16680"
+meta-xilinx-standalone 
+meta-xilinx-core     
+meta-xilinx-bsp      = "HEAD:1de98f2ce2d87d1273edadbdc4485dc4d733fac4"
+meta-bsp             
+meta-sdk             
+meta-ml              = "HEAD:d32463b7e43473ab68f12e233bbb244c28bf4638"
+meta-qt6             = "HEAD:1925dee31ae1d0b0e4a63b6c152f30546affbe57"
+wr-kernel-dev        = "HEAD:09259c5650d0c817e7048e35528ff5b66f051d61"
+meta-aws             = "HEAD:216c095de9d546c141a90017a91a3ccb226de754"
+intel-grand-ridge    = "HEAD:2ce5d4d00e9ea0242769e9b2d5f2496f47774818"
+wrlinux-src-dl       = "HEAD:d8bf04e90bb8bf401ed8df2391095b1289fa4a3f"
+local                = "master:1f41f338ddd1a38aedbaa68a6fbe60bb2ce5e55d"
