@@ -19,42 +19,37 @@ information on submitting changes.
 Rebuilding of prebuilts
 -----------------------
 
-Current prebuilt build tools is based on Wind River Linux BASE22.
+Current prebuilt build tools is based on Wind River Linux LTS24.
 
-To get started with Wind River Linux BASE22 latest branch WRLINUX_10_22_BASE_UPDATE0006
+To get started with Wind River Linux LTS24 latest branch WRLINUX_10_24_LTS
 
-$ git clone --branch WRLINUX_10_22_BASE_UPDATE0006 https://github.com/WindRiverLinux22/wrlinux-x
+$ git clone --branch WRLINUX_10_24_LTS https://github.com/WindRiverLinux24/wrlinux-x
+
 
 Setup a new project, using --machine=qemux86-64
 
 $ wrlinux-x/setup.sh --machines qemux86-64
 
+
 Create a new build directory using oe-init-build-env
 
 $ source oe-init-build-env
 
-Set preferred version for nativesdk-python3-django which is required by toaster
-
-$ cat >>conf/local.conf <<EOF
-BB_NO_NETWORK = '0'
-PREFERRED_VERSION_nativesdk-python3-django = '4.0.2'
-EOF
 
 Build buildtools tarballs
 
 $ bitbake buildtools-tarball &>build.log
-or
 $ bitbake buildtools-extended-tarball &>build-extended.log
 
-The generated buildtools files reside in tmp-glibc/deploy/sdk
+
+The generated buildtools files reside in tmp-glibc/deploy/sdk accordingly
 
 <sdkmachine>-buildtools-nativesdk-standalone-<version>.sh
-or
 <sdkmachine>-buildtools-extended-nativesdk-standalone-<version>.sh
 
 SDK manifest files are
+
 <sdkmachine>-buildtools-nativesdk-standalone-<version>.host.manifest
-or
 <sdkmachine>-buildtools-extended-nativesdk-standalone-<version>.host.manifest
 
 
@@ -68,10 +63,9 @@ the sources will be downloaded to ${DL_DIR}.
 Then construct buildtools git repo, take buildtools-extended-tarball as example
 
 $ BUILDTOOLS=buildtools-extended
-$ ORIG_VERSION=10.22.33.6
-$ VERSION=10.22.33.6b
+$ ORIG_VERSION=10.24.17.0
+$ VERSION=10.24.17.0
 $ LOGFILE=build-extended.log
-
 $ BUILDTOOLS_DIR=$BUILDTOOLS-standalone-$VERSION
 $ mkdir $BUILDTOOLS_DIR
 
@@ -83,6 +77,7 @@ Copy the buildtools manifest file
 
 $ cp tmp-glibc/deploy/sdk/x86_64-$BUILDTOOLS-nativesdk-standalone-$ORIG_VERSION.host.manifest \
      $BUILDTOOLS_DIR/x86_64-$BUILDTOOLS-nativesdk-standalone-$VERSION.host.manifest
+
 
 Backup license files of packages
 
@@ -100,6 +95,7 @@ $ while read name arch version; do
         fi
     fi
 done < $BUILDTOOLS_DIR/x86_64-$BUILDTOOLS-nativesdk-standalone-$VERSION.host.manifest
+
 
 The last step is to copy the buildtools file itself.
 
